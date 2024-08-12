@@ -1,97 +1,71 @@
-# [Horizon ChatGPT AI Template](https://horizon-ui.com/chatgpt-ai-template) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?text=Check%20Horizon%20ChatGPT%20AI%20Template,%20the%20trendiest%20open%20source%20ChatGPT%20AI%20admin%20template%20for%20%23nextjs%20and%20%23react!%0A%0Ahttps%3A//horizon-ui.com/chatgpt-ai-template/%20%20)
+<a href="https://chat.vercel.ai/">
+  <img alt="Next.js 14 and App Router-ready AI chatbot." src="https://chat.vercel.ai/opengraph-image.png">
+  <h1 align="center">Next.js AI Chatbot</h1>
+</a>
 
-![version](https://img.shields.io/badge/version-2.2.0-brightgreen.svg)
-[![GitHub issues open](https://img.shields.io/github/issues/horizon-ui/chatgpt-ai-template.svg?maxAge=2592000)](https://github.com/horizon-ui/chatgpt-ai-template/issues?q=is%3Aopen+is%3Aissue)
+<p align="center">
+  An open-source AI chatbot app template built with Next.js, the Vercel AI SDK, OpenAI, and Vercel KV.
+</p>
 
-<p>&nbsp;</p>
+<p align="center">
+  <a href="#features"><strong>Features</strong></a> ·
+  <a href="#model-providers"><strong>Model Providers</strong></a> ·
+  <a href="#deploy-your-own"><strong>Deploy Your Own</strong></a> ·
+  <a href="#running-locally"><strong>Running locally</strong></a> ·
+  <a href="#authors"><strong>Authors</strong></a>
+</p>
+<br/>
 
-[<img alt="Horizon UI - Tailwind CSS React Admin dashboard template" src="https://i.ibb.co/mqnbX1Y/horizon-ai-template-presentation-image-open-source.png" />](https://horizon-ui.com/ai-template)
+## Features
 
-<p>&nbsp;</p>
+- [Next.js](https://nextjs.org) App Router
+- React Server Components (RSCs), Suspense, and Server Actions
+- [Vercel AI SDK](https://sdk.vercel.ai/docs) for streaming chat UI
+- Support for OpenAI (default), Anthropic, Cohere, Hugging Face, or custom AI chat models and/or LangChain
+- [shadcn/ui](https://ui.shadcn.com)
+  - Styling with [Tailwind CSS](https://tailwindcss.com)
+  - [Radix UI](https://radix-ui.com) for headless component primitives
+  - Icons from [Phosphor Icons](https://phosphoricons.com)
+- Chat History, rate limiting, and session storage with [Vercel KV](https://vercel.com/storage/kv)
+- [NextAuth.js](https://github.com/nextauthjs/next-auth) for authentication
 
-Get started and build your dream AI web app with Horizon AI Template, the trendiest & innovative Open-Source Free ChatGPT AI Admin Template for NextJS & React!
+## Model Providers
 
----
+This template ships with OpenAI `gpt-3.5-turbo` as the default. However, thanks to the [Vercel AI SDK](https://sdk.vercel.ai/docs), you can switch LLM providers to [Anthropic](https://anthropic.com), [Cohere](https://cohere.com/), [Hugging Face](https://huggingface.co), or using [LangChain](https://js.langchain.com) with just a few lines of code.
 
-### Introduction
+## Deploy Your Own
 
-Horizon ChatGPT AI Template is the world's best open source OpenAI ChatGPT AI Template made with React, NextJS and Chakra UI! Start creating outstanding Chat AI SaaS Apps faster.
+You can deploy your own version of the Next.js AI Chatbot to Vercel with one click:
 
-It comes with over 30+ dark/light frontend individual elements, like buttons, inputs, navbars, nav tabs, cards, or alerts, giving you the freedom of choosing and combining.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?demo-title=Next.js+Chat&demo-description=A+full-featured%2C+hackable+Next.js+AI+chatbot+built+by+Vercel+Labs&demo-url=https%3A%2F%2Fchat.vercel.ai%2F&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F4aVPvWuTmBvzM5cEdRdqeW%2F4234f9baf160f68ffb385a43c3527645%2FCleanShot_2023-06-16_at_17.09.21.png&project-name=Next.js+Chat&repository-name=nextjs-chat&repository-url=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fai-chatbot&from=templates&skippable-integrations=1&env=OPENAI_API_KEY%2CAUTH_SECRET&envDescription=How+to+get+these+env+vars&envLink=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fai-chatbot%2Fblob%2Fmain%2F.env.example&teamCreateStatus=hidden&stores=[{"type":"kv"}])
 
-### Documentation
+## Creating a KV Database Instance
 
-Each element is well presented in a very complex documentation. You can read more about the <a href="https://horizon-ui.com/docs-ai-template/docs/introduction?ref=readme-horizon-ai-template-free" target="_blank">documentation here.</a>
+Follow the steps outlined in the [quick start guide](https://vercel.com/docs/storage/vercel-kv/quickstart#create-a-kv-database) provided by Vercel. This guide will assist you in creating and configuring your KV database instance on Vercel, enabling your application to interact with it.
 
-### Quick Start
+Remember to update your environment variables (`KV_URL`, `KV_REST_API_URL`, `KV_REST_API_TOKEN`, `KV_REST_API_READ_ONLY_TOKEN`) in the `.env` file with the appropriate credentials provided during the KV database setup.
 
-Install Horizon ChatGPT AI Template by running either of the following:
+## Running locally
 
-- Install NodeJS LTS from [NodeJs Official Page](https://nodejs.org/en/?ref=horizon-documentation) (NOTE: Product only works with LTS version)
+You will need to use the environment variables [defined in `.env.example`](.env.example) to run Next.js AI Chatbot. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/projects/environment-variables) for this, but a `.env` file is all that is necessary.
 
-Clone the repository with the following command:
+> Note: You should not commit your `.env` file or it will expose secrets that will allow others to control access to your various OpenAI and authentication provider accounts.
+
+1. Install Vercel CLI: `npm i -g vercel`
+2. Link local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
+3. Download your environment variables: `vercel env pull`
 
 ```bash
-git clone https://github.com/horizon-ui/chatgpt-ai-template.git
+pnpm install
+pnpm dev
 ```
 
-Run in the terminal this command:
+Your app template should now be running on [localhost:3000](http://localhost:3000/).
 
-```bash
-npm install
-```
+## Authors
 
-Then run this command to start your local server
+This library is created by [Vercel](https://vercel.com) and [Next.js](https://nextjs.org) team members, with contributions from:
 
-```bash
-npm run dev
-```
-
-### Your API Key is not working?
-
-- Make sure you have an [OpenAI account](https://platform.openai.com/account) and a valid API key to use ChatGPT. We don't sell API keys.
-- Make sure you have your billing info added in [OpenAI Billing page](https://platform.openai.com/account/billing/overview). Without billing info, your API key will not work.
-- The app will connect to the OpenAI API server to check if your API Key is working properly.
-
-### Example Page
-
-If you want to get inspiration or just show something directly to your clients, you can jump start your development with our pre-built example page. You will be able to quickly set up the basic structure for your web project.
-
-View <a href="https://horizon-ui.com/chatgpt-ai-template/?ref=readme-horizon-ai-template-free" target="_blank">example pages here.</a>
-
-### Versions
-
-| Free Version                                                                                                                                                         | PRO Version                                                                                                                                                                   |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [![Horizon ChatGPT AI Template](https://i.ibb.co/Qmym1qt/horizon-ai-template-presentation-image-open-source.png)](https://github.com/horizon-ui/chatgpt-ai-template) | [![Horizon AI Template PRO](https://i.ibb.co/ChL2fvf/horizon-ai-template-presentation-image.png)](https://www.horizon-ui.com/ai-template?ref=readme-horizon-ai-template-free) |
-
-### Figma Version
-
-Horizon AI Template is available in Figma format as well! [Check it out here](https://www.figma.com/community/file/1253038328954459768)! 🎨
-
-### Reporting Issues
-
-We use GitHub Issues as the official bug tracker for the Horizon UI. Here are
-some advices for our users that want to report an issue:
-
-1. Make sure that you are using the latest version of the Horizon AI Template.
-   Check the CHANGELOG from your dashboard on our
-   [CHANGE LOG File](https://github.com/horizon-ui/chatgpt-ai-template/blob/main/CHANGELOG.md?ref=readme-horizon-ai-template-free).
-2. Providing us reproducible steps for the issue will shorten the time it takes
-   for it to be fixed.
-3. Some issues may be browser specific, so specifying in what browser you
-   encountered the issue might help.
-
----
-
-### Community
-
-Connect with the community! Feel free to ask questions, report issues, and meet new people that already use Horizon AI Template!
-
-💬 [Join the #HorizonUI Discord Community!](https://discord.gg/f6tEKFBd4m)
-
-### Copyright and license
-
-⭐️ [Copyright 2023 Horizon UI ](https://www.horizon-ui.com/?ref=readme-horizon-ai-template-free)
-
-📄 [Horizon UI License](https://horizon-ui.notion.site/End-User-License-Agreement-8fb09441ea8c4c08b60c37996195a6d5)
+- Jared Palmer ([@jaredpalmer](https://twitter.com/jaredpalmer)) - [Vercel](https://vercel.com)
+- Shu Ding ([@shuding\_](https://twitter.com/shuding_)) - [Vercel](https://vercel.com)
+- shadcn ([@shadcn](https://twitter.com/shadcn)) - [Vercel](https://vercel.com)
