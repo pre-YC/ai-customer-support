@@ -9,5 +9,10 @@ module.exports = {
         pathname: '**'
       }
     ]
-  }
+  },
+  resolve: {
+    fallback: {
+      util: require.resolve("util/")
+    }
+}
 }
